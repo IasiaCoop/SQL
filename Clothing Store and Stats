@@ -1,0 +1,48 @@
+--Create a clothing store database
+CREATE TABLE clothing_store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, type TEXT, color TEXT);
+
+--Insert values into the clothing_store database
+INSERT INTO clothing_store values(1, "shirt", 10.99, "flannel", "red");
+INSERT INTO clothing_store values(2, "short", 9.99, "capri", "black");
+INSERT INTO clothing_store values(3, "pant", 14.99, "joggers", "blue");
+INSERT INTO clothing_store values(4, "pant", 12.99, "legging", "grey");
+INSERT INTO clothing_store values(5, "socks", 8.99, "crew-length", "pink");
+INSERT INTO clothing_store values(6, "hat", 5.65, "snap-back", "red-black");
+INSERT INTO clothing_store values(7, "hoodie", 20.00, "pullover", "orange");
+INSERT INTO clothing_store values(8, "gloves", 4.89, "leather", "black");
+INSERT INTO clothing_store values(9, "shirt", 15.99, "polo", "white");
+INSERT INTO clothing_store values(10, "skirt", 10.42, "mini", "baige");
+INSERT INTO clothing_store values(11, "rings", 100.00, "diamond", "gold");
+INSERT INTO clothing_store values(12, "underwear", 16.00, "brief", "pink");
+INSERT INTO clothing_store values(13, "watches", 85.99, "digital", "silver");
+INSERT INTO clothing_store values(14, "underwear", 16.00, "boxer", "black");
+INSERT INTO clothing_store values(15, "ties", 17.23, "clip-on", "burgundy");
+
+
+--What is the total for all the items in the store
+SELECT SUM(price) AS "Total"
+FROM clothing_store;
+
+--What is the top 5 most expensive items
+SELECT item, price
+FROM clothing_store
+ORDER BY price DESC
+LIMIT 5;
+
+--What type of shirt is the least expensive
+SELECT type
+FROM clothing_store
+WHERE item = "shirt"
+ORDER BY price
+LIMIT 1;
+
+
+
+
+
+
+
+
+
+
+
