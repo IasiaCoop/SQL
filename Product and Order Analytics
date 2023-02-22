@@ -1,0 +1,8 @@
+-In this query I wanted to to retrieve of the account numbers, number of orders, products, quantity, price, orderdates and locations of orders that
+where made in the month of February.
+
+SELECT c.acctnum, COUNT(c.order_id) AS 'Count of OrderIDs', f.Product, f.Quantity, f.price, f.orderdate, f.location
+FROM BIT_DB.customers c
+INNER JOIN BIT_DB.FebSales f
+ON c.order_id = f.orderID
+GROUP BY c.acctnum, f.Product, f.Quantity, f.price, f.orderdate, f.location
